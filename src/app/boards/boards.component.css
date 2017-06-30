@@ -1,1 +1,6 @@
-.boards-container { padding: 15px 0; }
+.boards-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

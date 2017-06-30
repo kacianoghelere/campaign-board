@@ -1,0 +1,5 @@
+.app-container { height: 100%; }
+
+.app-container .flex-header { height: 43px; }
+
+.app-container .flex-body { height: calc(100% - 43px); }

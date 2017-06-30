@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BoardsService } from '../boards.service';
+import { BoardCard } from '../board-card';
+import { BoardList } from '../board-list';
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -7,23 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  lists: List[];
+  lists: BoardList[];
 
-  constructor() {
-    this.lists = [
-      {id: 1, title: 'test1', description: 'description for test1'},
-      {id: 2, title: 'test2', description: 'description for test2'},
-      {id: 3, title: 'test3', description: 'description for test3'},
-      {id: 4, title: 'test4', description: 'description for test4'}
-    ];
+  constructor(private boardsService: BoardsService) {
+    this.lists = this.boardsService.getList();
+  }
+
+  addCard(list: BoardList): void {
+    list.cards.push({
+      id: 1,
+      title: 'test1',
+      description: 'description for test1'
+    });
+  }
+
+  addList(): void {
+    this.lists.push({
+      id: 1,
+      title: 'test1',
+      description: 'description for test1',
+      cards: []
+    });
   }
 
   ngOnInit() {
   }
 
-}
-export interface List {
-  id: number;
-  title: string;
-  description: string;
 }

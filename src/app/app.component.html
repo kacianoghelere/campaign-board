@@ -1,31 +1,36 @@
-<div>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" [routerLink]="['/home']">Campaign Manager</a>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['/boards']">
-              <i class="fa fa-th fa-fw"></i> Boards
-            </a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+<div class="app-container">
+  <div class="flex-header">
+    <nav class="navbar navbar-boards p-2">
+      <div class="d-flex justify-content-between">
+        <div class="p-2">
+          <a [routerLink]="['/boards']">
+            <i class="fa fa-th-large"></i> <b>Boards</b>
+          </a>
+        </div>
+        <div class="p-2">
+          <a [routerLink]="['/home']">
+            <b>Campaign Manager</b>
+          </a>
+        </div>
+        <div class="p-2">
+          <a href="#">
+            <i class="fa fa-plus"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-info"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-bell-o"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-user-circle-o"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
-  <div class="container">
+  <div class="flex-body">
     <router-outlet></router-outlet>
   </div>
 </div>

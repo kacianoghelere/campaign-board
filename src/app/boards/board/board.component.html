@@ -1,23 +1,71 @@
 <div class="board-container">
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Board title</h3>
+  <nav class="navbar navbar-boards">
+    <div class="d-flex justify-content-end">
+      <div class="mr-auto p-2">
+        <a href="#">
+          <b>Complete title  of the board</b>
+        </a>
+      </div>
+      <div class="p-2">
+        <a href="#">
+          <i class="fa fa-star fa-fw"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-lock fa-fw"></i> Private
+        </a>
+        <a href="#">
+          <i class="fa fa-sliders fa-fw"></i> Settings
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="board-cards">
+    <div class="card-container" *ngFor="let list of lists">
+      <div class="card">
+        <div class="card-header">
+          <div class="d-flex justify-content-end">
+            <div class="mr-auto p-2">
+              <b>{{list.title}}</b>
+            </div>
+            <div class="p-2">
+              <i class="fa fa-ellipsis-h"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-block" *ngIf="list.cards.length">
+          <div class="card" href="#" *ngFor="let card of list.cards">
+            <img class="card-img-top" src="http://fakeimg.pl/250x100/" *ngIf="card.img">
+            <div class="card-block">
+              <div class="d-flex justify-content-end">
+                <div class="mr-auto p-2">
+                  <a href="#">{{card.title}}</a>
+                </div>
+                <div class="p-2">
+                  <i class="fa fa-pencil fa-fw"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="card-footer add-card" (click)="addCard(list)">
+          <i class="fa fa-plus fa-fw"></i> Add card
+        </a>
+      </div>
     </div>
 
-    <div class="card-block">
-      <div class="card-deck">
-        <div class="card" *ngFor="let list of lists">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+    <div class="card-container">
+      <div class="card card-inverse dark-card">
+        <div class="card-header">
+          <div class="d-flex justify-content-end">
+            <div class="mr-auto p-2">
+              <a class="add-card" (click)="addList()">
+                <i class="fa fa-plus fa-fw"></i> Add new list
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
