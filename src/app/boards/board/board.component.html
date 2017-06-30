@@ -26,7 +26,7 @@
         <div class="card-header">
           <div class="d-flex justify-content-end">
             <div class="mr-auto p-2">
-              <b>{{list.title}}</b>
+              <b class="card-title">{{list.title}}</b>
             </div>
             <div class="p-2">
               <i class="fa fa-ellipsis-h"></i>
@@ -35,7 +35,7 @@
         </div>
         <div class="card-block" *ngIf="list.cards.length">
           <div class="card" href="#" *ngFor="let card of list.cards">
-            <img class="card-img-top" src="http://fakeimg.pl/250x100/" *ngIf="card.img">
+            <img class="card-img-top" [src]="card.img" *ngIf="card.img">
             <div class="card-block">
               <div class="d-flex justify-content-end">
                 <div class="mr-auto p-2">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Board } from '../board';
+
 @Component({
   selector: 'app-boards-list',
   templateUrl: './boards-list.component.html',
@@ -7,29 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardsListComponent implements OnInit {
 
+  boardId: number = 1;
   boards: Board[];
 
   constructor() {
-    this.boards = [
-      {id: 1, title: 'test1', description: 'description for test1'},
-      {id: 2, title: 'test2', description: 'description for test2'},
-      {id: 3, title: 'test3', description: 'description for test3'},
-      {id: 4, title: 'test4', description: 'description for test4'},
-      {id: 5, title: 'test5', description: 'description for test5'},
-      {id: 6, title: 'test6', description: 'description for test6'},
-      {id: 7, title: 'test7', description: 'description for test7'},
-      {id: 8, title: 'test8', description: 'description for test8'},
-      {id: 9, title: 'test9', description: 'description for test9'}
-    ]
+    this.boards = [];
+  }
+
+  addBoard() {
+    let id = this.boardId++;
+    this.boards.push({
+      id: id,
+      title: `Test${id}`,
+      description: `description for test${id}`,
+      favorite: (id % 2 == 0)
+    });
+  }
+
+  getFavoriteBoards(): Board[] {
+    return this.boards.filter((v) => v.favorite);
+  }
+
+  getFavoriteClass(board: Board): any {
+    return {'fa-star': board.favorite, 'fa-star-o': !board.favorite};
+  }
+
+  toggleFavorite(board: Board) {
+    board.favorite = !board.favorite;
   }
 
   ngOnInit() {
+    for (let i = 0; i < 10; i++) {
+      this.addBoard();
+    }
   }
-
-}
-
-export interface Board {
-  id: number;
-  title: string;
-  description: string;
 }

@@ -8,7 +8,6 @@
   height: calc(100% - 41px);
   max-height: 100%;
   overflow-y: auto;
-  padding: 10px;
   white-space: nowrap;
 }
 
@@ -20,6 +19,9 @@
   width: 300px;
 }
 
+@media(size: 786px) {
+
+}
 
 .board-cards .card-container .card {
   border: none;
@@ -41,7 +43,7 @@
 
 .board-cards .card-container > .card .card-header,
 .board-cards .card-container > .card .card-footer {
-  border-color: #f2f2f4;
+  border-color: #f1f1f3;
 }
 
 .board-cards .card-container > .card,
@@ -70,13 +72,3 @@
 }
 
 .text-center { text-align: center; }
-
-.dark-card {
-  background-color: #bbb;
-  color: #eee;
-  -moz-box-shadow: 0 1px 1px #999;
-  -webkit-box-shadow: 0 1px 1px #999;
-  box-shadow: 0 1px 1px #999;
-}
-
-.dark-card .card-header { border: none; }
