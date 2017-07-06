@@ -46,10 +46,14 @@
   width: 100%;
 }
 
+
+.board-panel .board-panel-header .simple-title { width: auto; }
+
 .board-panel .board-panel-header .link {
   border-radius: 4px;
   color: #555;
   cursor: pointer;
+  font-size: 13px;
   margin: 5px;
   padding: 5px;
   text-align: center;

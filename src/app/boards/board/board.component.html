@@ -1,7 +1,12 @@
-<div class="board-panel">
+<form class="board-panel">
   <div class="board-panel-header">
     <div class="">
-      <b class="title">Complete title  of the board</b>
+      <span class="title">
+        <input class="simple-input"
+          type="text" 
+          name="board-title"
+          [(ngModel)]="board.title">
+      </span>
       <a class="link" (click)="addList()">
         <i class="fa fa-plus fa-fw"></i> Add List
       </a>
@@ -20,20 +25,6 @@
   </div>
 
   <div class="board-panel-body">
-    <card-list *ngFor="let list of lists" [list]="list"></card-list>
-
-    <!-- <div class="card-container">
-      <div class="card card-inverse dark-card">
-        <div class="card-header">
-          <div class="d-flex justify-content-end">
-            <div class="mr-auto p-2">
-              <a class="add-card" (click)="addList()">
-                <i class="fa fa-plus fa-fw"></i> Add new list
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    <card-list *ngFor="let list of board.lists" [list]="list"></card-list>
   </div>
-</div>
+</form>

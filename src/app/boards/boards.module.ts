@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BoardsRoutingModule } from './boards-routing.module';
 import { BoardsComponent } from './boards.component';
@@ -13,6 +14,8 @@ import { CardComponent } from './board/card/card.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BoardsRoutingModule
   ],
   declarations: [

@@ -5,6 +5,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { BoardsModule } from './boards/boards.module';
 import { HomeModule } from './home/home.module';
+import { UtilModule } from './util/util.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BoardsModule,
     HomeModule,
+    UtilModule,
     AppRoutingModule
   ],
   declarations: [

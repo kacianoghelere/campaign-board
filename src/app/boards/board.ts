@@ -1,3 +1,5 @@
+import { BoardList } from './board-list';
+
 /**
  * Board interface
  */
@@ -6,4 +8,5 @@ export interface Board {
   title: string;
   description?: string;
   favorite?: boolean;
+  lists?: BoardList[];
 }
