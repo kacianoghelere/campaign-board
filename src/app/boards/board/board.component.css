@@ -19,7 +19,15 @@
   width: 300px;
 }
 
-@media(size: 786px) {
+@media(max-size: 786px) {
+
+}
+
+@media(max-size: 940px) {
+
+}
+
+@media(max-size: 1140px) {
 
 }
 
