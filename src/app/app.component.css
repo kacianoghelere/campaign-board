@@ -1,5 +1,76 @@
-.app-container { height: 100%; }
+/* -------------------------------------------------------------------------- */
 
-.app-container .flex-header { height: 43px; }
+.flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  float: left;
+  height: 100%;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+}
 
-.app-container .flex-body { height: calc(100% - 43px); }
+.flex-container .container-header {
+  background: #eee;
+  -webkit-flex-grow: 0;
+  -moz-flex-grow: 0;
+  flex-grow: 0;
+  padding: 10px;
+}
+
+.flex-container .container-header .header-title {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container .container-header .link {
+  margin: 0;
+  padding: 0;
+  color: #555;
+}
+
+.flex-container .container-header .link {
+  border-radius: 4px;
+  color: #555;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.flex-container .container-header .link:hover {
+  background-color: #f5f5f5;
+  color: #666;
+  -moz-box-shadow: 0 2px 3px #ccc;
+  -webkit-box-shadow: 0 2px 3px #ccc;
+  box-shadow: 0 2px 3px #ccc;
+}
+
+.flex-container .container-body {
+  background: #ccc;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 5px;
+}

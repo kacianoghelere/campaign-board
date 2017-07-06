@@ -7,6 +7,8 @@ import { BoardsListComponent } from './boards-list/boards-list.component';
 import { BoardComponent } from './board/board.component';
 import { BoardsService } from './boards.service';
 import { BoardCardComponent } from './board-card/board-card.component';
+import { CardListComponent } from './board/card-list/card-list.component';
+import { CardComponent } from './board/card/card.component';
 
 @NgModule({
   imports: [
@@ -17,10 +19,13 @@ import { BoardCardComponent } from './board-card/board-card.component';
     BoardsComponent,
     BoardsListComponent,
     BoardComponent,
-    BoardCardComponent
+    BoardCardComponent,
+    CardListComponent,
+    CardComponent
   ],
   exports: [
-    BoardCardComponent
+    BoardCardComponent,
+    CardListComponent
   ],
   providers: [BoardsService]
 })

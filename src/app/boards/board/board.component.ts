@@ -17,14 +17,6 @@ export class BoardComponent implements OnInit {
     this.lists = this.boardsService.getList();
   }
 
-  addCard(list: BoardList): void {
-    list.cards.push({
-      id: 1,
-      title: 'test1',
-      description: 'description for test1'
-    });
-  }
-
   addList(): void {
     this.lists.push({
       id: 1,

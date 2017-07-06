@@ -1,0 +1,20 @@
+.card {
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+  -moz-box-shadow: 0 2px 1px #ccc;
+  -webkit-box-shadow: 0 2px 1px #ccc;
+  box-shadow: 0 2px 1px #ccc;
+  box-sizing: border-box;
+  margin: 5px;
+  /*padding: 10px;
+  word-wrap: break-word;*/
+}
+
+.card:hover {
+  background: #fafafa;
+}
+
+.card a {
+  color: #666;
+}

@@ -1,0 +1,21 @@
+:host { margin: 5px; }
+
+.board-card {
+  background-color: #f5f5f5;
+  border: none;
+  -moz-box-shadow: 0 2px 1px #bbb;
+  -webkit-box-shadow: 0 2px 1px #bbb;
+  box-shadow: 0 2px 1px #bbb;
+  color: #444;
+  text-decoration: none;
+}
+
+.board-card a { color: #444; }
+
+.board-card:hover {
+  background-color: #fff;
+  -moz-box-shadow: 0 2px 6px #aaa;
+  -webkit-box-shadow: 0 2px 6px #aaa;
+  box-shadow: 0 2px 6px #aaa;
+  color: #444;
+}

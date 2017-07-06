@@ -1,0 +1,18 @@
+<div class="list">
+  <div class="list-header">
+    <div class="d-flex justify-content-end">
+      <div class="mr-auto p-2">
+        <b class="card-title">{{list.title}}</b>
+      </div>
+      <div class="p-2">
+        <i class="fa fa-ellipsis-h"></i>
+      </div>
+    </div>
+  </div>
+  <div class="list-cards" *ngIf="list.cards.length">
+    <card *ngFor="let card of list.cards" [card]="card"></card>
+  </div>
+  <a class="list-footer" (click)="addCard(list)">
+    <i class="fa fa-plus fa-fw"></i> Add card
+  </a>
+</div>
