@@ -5,12 +5,11 @@
   display: inline-block;
   flex: 0 0 auto;
   float: left;
-  height: 100%;
   margin: 0;
   max-height: 100%;
   min-width: 0;
   padding: 5px;
-  width: 280px;
+  width: 300px;
 }
 
 .list {
@@ -30,6 +29,7 @@
   -moz-flex-direction: column;
   flex-direction: column;
   float: left;
+  height: 100%;
   max-height: 100%;
   max-width: 100%;
   min-height: 0;
@@ -56,6 +56,9 @@
   border-bottom: 1px solid #ddd;
   box-sizing: border-box;
   float: left;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
   max-height: 100%;
   max-width: 100%;
   min-width: 0;
