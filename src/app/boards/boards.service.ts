@@ -29,7 +29,7 @@ export class BoardsService {
         id: cardId,
         title: `Card ${list.id}-${cardId}`,
         description: '',
-        img: (cardAmount - cardId) % 3 == 0 ?  'http://fakeimg.pl/250x100/' : ''
+        img: (cardAmount - cardId) % 3 == 0 ?  'http://fakeimg.pl/300x500/' : ''
       };
       list.cards.push(card);
     }
@@ -63,6 +63,7 @@ export class BoardsService {
     let board: Board = {
       id: boardId,
       title: `Complete title of the Board ${boardId}`,
+      favorite: false,
       lists: []
     };
     if (mockData) this.mockLists(board); // Mock data in the board

@@ -30,12 +30,7 @@ export class BoardPanelComponent implements OnInit {
     });
   }
 
-  private notFound() {
-    console.log("Not found!");
-    this.router.navigate(["/boards"]);
-  }
-
-  addList(): void {
+  public addList(): void {
     let list: BoardList = {
       id: 1,
       title: 'New List',
@@ -43,6 +38,26 @@ export class BoardPanelComponent implements OnInit {
       cards: []
     };
     this.board.lists.push(list);
+  }
+
+  private notFound() {
+    console.log("Not found!");
+    this.router.navigate(["/boards"]);
+  }
+
+  private toggleFavorite() {
+    this.board.favorite = !this.board.favorite;
+  }
+
+  private removeBoardList(listId: number) {
+    let list = this.board.lists.find((list) => list.id == listId);
+    if (list) {
+      let index = this.board.lists.indexOf(list);
+      console.log("Removendo index", index);
+      if (index >= 0) {
+        this.board.lists.splice(index, 1);
+      }
+    }
   }
 
   ngOnInit() {

@@ -17,3 +17,13 @@
 .card a { color: #666; }
 
 .card .card-block { padding: 5px; }
+
+.card img {
+  max-height: 150px;
+}
+
+.card .edit-card {
+  cursor: pointer;
+  float: left;
+  padding: 5px;
+}

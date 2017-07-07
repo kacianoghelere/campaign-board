@@ -8,22 +8,23 @@
     </div>
     <div class="controls">
       <a class="link" (click)="addList()">
-        <i class="fa fa-plus fa-fw"></i> List
+        <i class="fa fa-plus"></i> List
+      </a>
+      <a class="link" (click)="toggleFavorite()">
+        <favorite-icon [favorite]="board.favorite"></favorite-icon> Favorite
       </a>
       <a class="link" href="#">
-        <i class="fa fa-star fa-fw"></i> Favorite
+        <i class="fa fa-lock"></i> Private
       </a>
       <a class="link" href="#">
-        <i class="fa fa-lock fa-fw"></i> Private
-      </a>
-      <a class="link" href="#">
-        <i class="fa fa-sliders fa-fw"></i> Settings
+        <i class="fa fa-sliders"></i> Settings
       </a>
     </div>
   </div>
 
   <div class="board-panel-body">
     <board-panel-list *ngFor="let list of board.lists"
-      [list]="list"></board-panel-list>
+      [list]="list"
+      (removeBoardList)="removeBoardList($event)"></board-panel-list>
   </div>
 </form>

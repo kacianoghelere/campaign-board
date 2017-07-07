@@ -5,7 +5,14 @@
         <input class="simple-input" type="text" [(ngModel)]="list.title">
       </div>
       <div class="p-2">
-        <i class="fa fa-ellipsis-h"></i>
+        <div ngbDropdown class="d-inline-block">
+          <a class="edit-list" id="listDropdown-{{list.id}}" ngbDropdownToggle></a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" (click)="removeList()">
+              <icon name="remove"></icon> Remover
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -13,7 +20,7 @@
     <board-panel-card *ngFor="let card of list.cards"
       [card]="card"></board-panel-card>
   </div>
-  <a class="list-footer" (click)="addCard(list)">
+  <a class="list-footer" (click)="addCard()">
     <i class="fa fa-plus fa-fw"></i> Add card
   </a>
 </div>

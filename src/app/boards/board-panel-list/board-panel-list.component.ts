@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { BoardList } from '../board-list';
 
@@ -10,15 +10,22 @@ import { BoardList } from '../board-list';
 export class BoardPanelListComponent implements OnInit {
 
   @Input('list') list: BoardList;
+  @Output('removeBoardList') removeBoardList: EventEmitter<number>;
 
-  constructor() { }
+  constructor() {
+    this.removeBoardList = new EventEmitter();
+  }
 
-  addCard(list: BoardList): void {
-    list.cards.push({
+  addCard(): void {
+    this.list.cards.push({
       id: 1,
       title: 'test1',
       description: 'description for test1'
     });
+  }
+
+  public removeList() {
+    this.removeBoardList.emit(this.list.id);
   }
 
   ngOnInit() {

@@ -10,7 +10,7 @@
       <div class="p-2">
         <button class="btn btn-outline-secondary btn-sm"
             (click)="toggleFavorite()">
-          <i class="fa" [ngClass]="getFavoriteClass()"></i>
+          <favorite-icon [favorite]="board.favorite"></favorite-icon>
         </button>
         <button class="btn btn-outline-secondary btn-sm">
           <i class="fa fa-ellipsis-h"></i>
