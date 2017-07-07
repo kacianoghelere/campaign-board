@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Board } from '../board';
+import { BoardsService } from '../boards.service';
 
 @Component({
   selector: 'app-boards-list',
@@ -12,18 +14,16 @@ export class BoardsListComponent implements OnInit {
   boardId: number = 1;
   boards: Board[];
 
-  constructor() {
-    this.boards = [];
+  constructor(
+    private router: Router,
+    private boardsService: BoardsService
+  ) {
+    this.boards = this.boardsService.list();
   }
 
   addBoard() {
-    let id = this.boardId++;
-    this.boards.push({
-      id: id,
-      title: `Test${id}`,
-      description: `description for test${id}`,
-      favorite: (id % 2 == 0)
-    });
+    let boardId = this.boardsService.create();
+    this.router.navigate(["/boards", boardId]);
   }
 
   getFavoriteBoards(): Board[] {
@@ -39,8 +39,5 @@ export class BoardsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    for (let i = 0; i < 10; i++) {
-      this.addBoard();
-    }
   }
 }

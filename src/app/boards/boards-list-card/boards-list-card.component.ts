@@ -3,11 +3,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Board } from '../board';
 
 @Component({
-  selector: 'board-card',
-  templateUrl: './board-card.component.html',
-  styleUrls: ['./board-card.component.css']
+  selector: 'boards-list-card',
+  templateUrl: './boards-list-card.component.html',
+  styleUrls: ['./boards-list-card.component.css']
 })
-export class BoardCardComponent implements OnInit {
+export class BoardsListCardComponent implements OnInit {
 
   @Input() board: Board;
 

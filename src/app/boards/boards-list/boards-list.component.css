@@ -14,6 +14,7 @@
   flex-grow: 1;
   max-height: 100%;
   min-height: 0;
+  width: 100%;
 }
 
 .boards-panel .boards-panel-header {
@@ -77,11 +78,16 @@
   flex-direction: column;
   float: left;
   min-height: 0;
-  overflow-x: auto;
   padding: 5px;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
+}
+
+.boards-panel .boards-panel-body .boards-categories {
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .boards {

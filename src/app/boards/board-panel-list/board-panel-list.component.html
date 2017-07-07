@@ -9,8 +9,9 @@
       </div>
     </div>
   </div>
-  <div class="list-cards" *ngIf="list.cards.length">
-    <card *ngFor="let card of list.cards" [card]="card"></card>
+  <div class="list-cards">
+    <board-panel-card *ngFor="let card of list.cards"
+      [card]="card"></board-panel-card>
   </div>
   <a class="list-footer" (click)="addCard(list)">
     <i class="fa fa-plus fa-fw"></i> Add card

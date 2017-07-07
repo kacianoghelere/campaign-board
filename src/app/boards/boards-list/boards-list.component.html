@@ -11,22 +11,24 @@
   </div>
 
   <div class="boards-panel-body">
-    <h2 class="board-category">
-      <i class="fa fa-star"></i> Favorite Boards
-    </h2>
+    <div class="boards-categories">
+      <h2 class="board-category">
+        <i class="fa fa-star"></i> Favorite Boards
+      </h2>
 
-    <div class="boards">
-      <board-card *ngFor="let board of getFavoriteBoards()"
-        [board]="board"></board-card>
-    </div>
+      <div class="boards">
+        <boards-list-card *ngFor="let board of getFavoriteBoards()"
+          [board]="board"></boards-list-card>
+      </div>
 
-    <h2 class="board-category">
-      <i class="fa fa-th-large"></i> My Boards
-    </h2>
+      <h2 class="board-category">
+        <i class="fa fa-th-large"></i> My Boards
+      </h2>
 
-    <div class="boards">
-      <board-card *ngFor="let board of boards"
-        [board]="board"></board-card>
+      <div class="boards">
+        <boards-list-card *ngFor="let board of boards"
+          [board]="board"></boards-list-card>
+      </div>
     </div>
   </div>
 </div>

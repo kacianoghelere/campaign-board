@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { BoardList } from '../../board-list';
+import { BoardList } from '../board-list';
 
 @Component({
-  selector: 'card-list',
-  templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.css']
+  selector: 'board-panel-list',
+  templateUrl: './board-panel-list.component.html',
+  styleUrls: ['./board-panel-list.component.css']
 })
-export class CardListComponent implements OnInit {
+export class BoardPanelListComponent implements OnInit {
 
   @Input('list') list: BoardList;
 
@@ -23,5 +23,4 @@ export class CardListComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

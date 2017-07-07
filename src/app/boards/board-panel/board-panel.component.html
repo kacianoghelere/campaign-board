@@ -1,19 +1,17 @@
 <form class="board-panel">
   <div class="board-panel-header">
-    <div class="">
-      <span class="title">
-        <input class="simple-input"
-          type="text" 
-          name="board-title"
-          [(ngModel)]="board.title">
-      </span>
-      <a class="link" (click)="addList()">
-        <i class="fa fa-plus fa-fw"></i> Add List
-      </a>
+    <div class="title">
+      <input class="simple-input"
+        type="text"
+        name="board-title"
+        [(ngModel)]="board.title">
     </div>
-    <div class="">
+    <div class="controls">
+      <a class="link" (click)="addList()">
+        <i class="fa fa-plus fa-fw"></i> List
+      </a>
       <a class="link" href="#">
-        <i class="fa fa-star fa-fw"></i>
+        <i class="fa fa-star fa-fw"></i> Favorite
       </a>
       <a class="link" href="#">
         <i class="fa fa-lock fa-fw"></i> Private
@@ -25,6 +23,7 @@
   </div>
 
   <div class="board-panel-body">
-    <card-list *ngFor="let list of board.lists" [list]="list"></card-list>
+    <board-panel-list *ngFor="let list of board.lists"
+      [list]="list"></board-panel-list>
   </div>
 </form>
